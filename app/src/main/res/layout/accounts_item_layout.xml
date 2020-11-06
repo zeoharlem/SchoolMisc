@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/circularTextView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:civ_border_color="#AAA"
+                app:civ_border_width="4dp"
+                app:srcCompat="@drawable/avatar_img" />
+
+            <TextView
+                android:id="@+id/textReceiver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/circularTextView"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:fadingEdgeLength="3dp"
+                android:fontFamily="@font/spartanblack"
+                android:maxLength="29"
+                android:paddingStart="5dp"
+                android:text="Register Member Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/phoneTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textReceiver"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/circularTextView"
+                android:fontFamily="@font/spartanregular"
+                android:paddingStart="5dp"
+                android:text="zeoharlem@yahoo.co.uk | +234 809 851 3161"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/locationTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneTag"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/circularTextView"
+                android:drawableStart="@drawable/ic_baseline_location_dark_on_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/spartansemibold"
+                android:paddingStart="5dp"
+                android:text="Ibadan, Oyo State"
+                android:textColor="@color/colorDarkOneGreen"
+                android:textSize="13sp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

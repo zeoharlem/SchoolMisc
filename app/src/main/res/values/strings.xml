@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SchoolMisc</string>
+    <string name="schoolmisc">SchoolMisc</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="show">Show</string>
+    <string name="forgot">Forgot</string>
+    <string name="dashboard">Dashboard</string>
 </resources>
