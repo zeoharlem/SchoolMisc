@@ -23,7 +23,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent   = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent   = new Intent(getApplicationContext(), SendOtpActivity.class);
                 startActivity(intent);
                 finish();
             }

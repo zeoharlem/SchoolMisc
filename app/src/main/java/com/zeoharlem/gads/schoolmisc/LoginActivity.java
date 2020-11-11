@@ -77,6 +77,10 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
         }
     };
 
+    private void checkLoginDetailApi(){
+        String uriString    = Helpers.URL_STRING;
+    }
+
     private boolean validateRow(){
         String textEmailId  = editTextEmailAdd.getText().toString().trim();
         String textPassword = editTextPassword.getText().toString().trim();

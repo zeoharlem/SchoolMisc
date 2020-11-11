@@ -6,4 +6,9 @@
     <string name="show">Show</string>
     <string name="forgot">Forgot</string>
     <string name="dashboard">Dashboard</string>
+    <string name="speech">stepScreen</string>
+    <string name="otp_statement">We will be sending you a one time password to this number</string>
+    <string name="enter_the_otp_sent_to_you">Enter the OTP sent to you</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
 </resources>
