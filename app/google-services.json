@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "483020639439",
+    "firebase_url": "https://scotp-verify.firebaseio.com",
+    "project_id": "scotp-verify",
+    "storage_bucket": "scotp-verify.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483020639439:android:f325d74ec93451f4c5bbba",
+        "android_client_info": {
+          "package_name": "com.zeoharlem.gads.schoolmisc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483020639439-b8traku8ga7lr8bnj0p5293r9jd914ll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zeoharlem.gads.schoolmisc",
+            "certificate_hash": "3300fc2067459d636d7edb2ea387ddbae7677080"
+          }
+        },
+        {
+          "client_id": "483020639439-s02fi9d263q0pnu74pff813pivg30e96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5toFA-3Lghbqnv5HJzkF3q7Aku3QWUps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483020639439-s02fi9d263q0pnu74pff813pivg30e96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

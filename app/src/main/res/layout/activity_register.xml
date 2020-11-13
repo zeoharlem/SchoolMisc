@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorWhite"
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:padding="10dp"
-    tools:context=".LoginActivity">
+    tools:context=".RegisterActivity"
+    android:padding="10dp">
 
     <LinearLayout
         android:id="@+id/login_layout"
@@ -55,7 +55,6 @@
             android:inputType="textEmailAddress"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="zeo@yahoo.com"
             android:textColor="@color/colorDarkOneGreen"
             android:textColorHint="@color/colorPrimaryDark"
             android:textSize="16sp" />
@@ -98,53 +97,28 @@
 
             <CheckBox
                 android:id="@+id/show_hide_password"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/spartanblack"
                 android:text="@string/show"
-                android:fontFamily="@font/spartanblack"
                 android:textColor="@color/colorDarkGreen"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:fontFamily="@font/spartanblack"
-                android:gravity="end"
-                android:padding="5dp"
-                android:text="@string/forgot"
-                android:textAllCaps="true"
-                android:textColor="@color/colorDarkOneGreen"
-                android:textSize="15sp" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/bordered_button"
             android:fontFamily="@font/spartanblack"
             android:padding="3dp"
-            android:text="Login Now"
+            android:text="@string/register_now"
             android:textColor="@color/colorDarkGreen"
             android:textSize="17sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/register_now"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight=".2"
-            android:fontFamily="@font/spartansemibold"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:text="Don't Have Account? Register Now"
-            android:textColor="@color/colorDarkOneGreen"
-            android:textSize="15sp" />
     </LinearLayout>
 
 </RelativeLayout>

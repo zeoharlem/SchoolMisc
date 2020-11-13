@@ -25,22 +25,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/spartanblack"
-            android:textColor="@color/colorDarkOneGreen"
             android:text="Phone Verification"
+            android:textColor="@color/colorDarkOneGreen"
             android:textSize="30sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:paddingStart="50dp"
             android:layout_marginTop="8dp"
-            android:paddingEnd="50dp"
-            android:gravity="center"
-            android:textSize="17sp"
-            android:textColor="@color/black"
             android:fontFamily="@font/spartansemibold"
-            android:text="@string/otp_statement" />
+            android:gravity="center"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:text="@string/otp_statement"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,9 +78,9 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:focusedByDefault="true"
                 android:fontFamily="@font/spartanblack"
                 android:gravity="center"
-                android:focusedByDefault="true"
                 android:hint="Enter Phone Number"
                 android:inputType="phone"
                 android:paddingTop="10dp"
@@ -97,20 +97,33 @@
             android:layout_marginEnd="30dp"
             android:background="@color/colorDarkOneGreen" />
 
-        <Button
-            android:id="@+id/phoneVerify"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/bordered_button"
-            android:fontFamily="@font/spartanblack"
-            android:padding="20dp"
-            android:text="VERIFY PHONE"
-            android:textColor="@color/colorDarkGreen"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/phoneVerify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/bordered_button"
+                android:fontFamily="@font/spartanblack"
+                android:padding="20dp"
+                android:text="VERIFY PHONE"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

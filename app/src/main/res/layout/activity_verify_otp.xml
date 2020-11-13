@@ -183,27 +183,40 @@
                 android:id="@+id/textResendOtp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:fontFamily="@font/spartanblack"
                 android:text="@string/resend_otp"
-                android:layout_marginStart="10dp"
                 android:textColor="@color/colorDarkOneGreen"
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonVerify"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/bordered_button"
-            android:fontFamily="@font/spartanblack"
-            android:padding="20dp"
-            android:text="VERIFY OTP NOW"
-            android:textColor="@color/colorDarkGreen"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonVerify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/bordered_button"
+                android:fontFamily="@font/spartanblack"
+                android:padding="20dp"
+                android:text="VERIFY OTP NOW"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
 
     </LinearLayout>
 

@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+        TextView register   = findViewById(R.id.register_now);
         editTextEmailAdd    = findViewById(R.id.login_emailid);
         editTextPassword    = findViewById(R.id.login_password);
         showHidePassword    = findViewById(R.id.show_hide_password);
@@ -40,6 +41,14 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
         buttonLogin         = findViewById(R.id.loginBtn);
 
         showHidePassword.setOnCheckedChangeListener(this);
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent   = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Set the OnFocused Listener when the Layout is clicked
         editTextEmailAdd.setOnFocusChangeListener(new View.OnFocusChangeListener() {
