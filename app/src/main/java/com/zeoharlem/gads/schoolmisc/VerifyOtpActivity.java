@@ -30,7 +30,7 @@ import com.zeoharlem.gads.schoolmisc.Utils.MyConfig;
 
 import java.util.Objects;
 
-public class VerifyOtpActivity extends AppCompatActivity {
+public class VerifyOtpActivity extends AppCompatActivity implements OtpVerifyResponse.iOtpVerifyResponseListener {
 
     private EditText code1, code2, code3, code4, code5, code6;
     private TextView mTextViewMobile;
@@ -39,13 +39,14 @@ public class VerifyOtpActivity extends AppCompatActivity {
     private ProgressBar mProgressBar;
     private String mobilePhoneNumber;
 
-    OtpVerifyResponse myReceiverOtp = new OtpVerifyResponse();
+    private OtpVerifyResponse myReceiverOtp;
     private SharedPreferences sharePref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_otp);
+        myReceiverOtp   = new OtpVerifyResponse();
 
         //FirebaseApp.initializeApp(this);
 
@@ -55,8 +56,6 @@ public class VerifyOtpActivity extends AppCompatActivity {
         verificationId  = getIntent().getStringExtra("verificationId");
         mobilePhoneNumber   = String.format("+234-%s", getIntent().getStringExtra("mobile_num"));
         mTextViewMobile.setText(mobilePhoneNumber);
-
-        L.l(getApplicationContext(), OtpVerifyResponse.getOtpTextResponse());
 
         setEditTextCodesActions();
 
@@ -101,6 +100,9 @@ public class VerifyOtpActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //On SMSMessage Response Perform Actions
+        myReceiverOtp.setOtpVerifyResponseListener(this);
     }
 
     @Override
@@ -135,99 +137,111 @@ public class VerifyOtpActivity extends AppCompatActivity {
         code6   = findViewById(R.id.inputCode6);
 
         //AddtextchangeListener to each editext
-        code1.addTextChangedListener(code1TextListener);
-        code2.addTextChangedListener(code2TextListener);
-        code3.addTextChangedListener(code3TextListener);
-        code4.addTextChangedListener(code4TextListener);
-        code5.addTextChangedListener(code5TextListener);
+//        code1.addTextChangedListener(code1TextListener);
+//        code2.addTextChangedListener(code2TextListener);
+//        code3.addTextChangedListener(code3TextListener);
+//        code4.addTextChangedListener(code4TextListener);
+//        code5.addTextChangedListener(code5TextListener);
     }
 
-    TextWatcher code1TextListener   = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//    TextWatcher code1TextListener   = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            if(!charSequence.toString().trim().isEmpty()){
+//                code2.requestFocus();
+//            }
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//
+//        }
+//    };
+//
+//    TextWatcher code2TextListener   = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            code3.requestFocus();
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//
+//        }
+//    };
+//
+//    TextWatcher code3TextListener   = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            code4.requestFocus();
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//
+//        }
+//    };
+//
+//    TextWatcher code4TextListener   = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            code5.requestFocus();
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//
+//        }
+//    };
+//
+//    TextWatcher code5TextListener   = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            code6.requestFocus();
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//
+//        }
+//    };
 
-        }
 
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            if(!charSequence.toString().trim().isEmpty()){
-                code2.requestFocus();
-            }
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
-    TextWatcher code2TextListener   = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            code3.requestFocus();
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
-    TextWatcher code3TextListener   = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            code4.requestFocus();
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
-    TextWatcher code4TextListener   = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            code5.requestFocus();
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
-    TextWatcher code5TextListener   = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            code6.requestFocus();
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
+    @Override
+    public void onSmsReceived(String sender, String smsMessage) {
+        String[] smsMessageArr  = smsMessage.trim().split("");
+        code1.setText(smsMessageArr[0]);
+        code2.setText(smsMessageArr[1]);
+        code3.setText(smsMessageArr[2]);
+        code4.setText(smsMessageArr[3]);
+        code5.setText(smsMessageArr[4]);
+        code6.setText(smsMessageArr[5]);
+        L.l(getApplicationContext(), "From VerifyOtp:= "+sender+" : " + smsMessage);
+    }
 
 }
